@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet/less'  href='/stylesheets/index.less' />
+  </head>
+  <body>
+  	<header>
+  		<h1>H5 Music</h1>
+      <ul class="type">
+        <li class="selected">Dot</li>
+        <li>Column</li>
+      </ul>
+      <p>Volume <input id="volume" type="range" min="0" max="100" value="60"></p>
+      <div class="fork">
+        <div class="border">
+          <a target="_blank" href="https://github.com/w190768613">Fork Me On GitHub</a>
+        </div>
+      </div>
+  	</header>  	
+    <div class="list" id="list">
+    	<button class="music-add" id="add">
+    		Local music
+    	</button>
+      <input class="upload" type="file" id="upload" />
+    	<ul class="music-list" id="music-list">
+        <% music.forEach(function(name){ %>
+        <li title="<%= name %>"><%= name %></li>
+        <% }) %>
+    	</ul>
+    </div>
+    <div class="canvas" id="canvas">
+    </div>
+    <script type="text/javascript" src='/javascripts/MusicVisualizer.js'></script>
+    <script type="text/javascript" src='/javascripts/index.js'></script>
+  </body>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+</html>
+	
+	
