@@ -1,3 +1,4 @@
+
 function MusicVisualizer(options){
 	
 	//播放过的bufferSource的对象
@@ -179,8 +180,6 @@ MusicVisualizer.prototype.play = function(path, isMobile/*是否移动设备*/){
 			return;
 		}
 		
-		//安卓iphone等移动设备上使用ajax请求arraybuffer再解码
-		//安卓iphone等移动设备上audio播放流似乎没被re-routed到audioContext中
 		if(path in self.buffer){
 			MusicVisualizer.stop(self.source);
 
@@ -196,9 +195,6 @@ MusicVisualizer.prototype.play = function(path, isMobile/*是否移动设备*/){
 				self.decode(this, function(){
 
 					if(count != self.count)return;
-
-					//将decode好的buffer缓存起来
-					//self.buffer[path] = this.buffer;
 					
 					self.initCallback && !self.source && MusicVisualizer.isFunction(self.initCallback) && self.initCallback();
 					
@@ -210,23 +206,6 @@ MusicVisualizer.prototype.play = function(path, isMobile/*是否移动设备*/){
 		}
 	}
 }
-
-
-//直接播放当前的bufferSource，在苹果设备用户触发时调用
-MusicVisualizer.prototype.start = function(){
-	if(this.source === this.audioSource){
-		this.audio.play();
-	}else{
-		this.source && this.source[this.source.start ? "start" : "noteOn"](0);
-	}	
-}
-
-
-//应用加载完毕，为苹果设备添加用户触发的事件
-MusicVisualizer.prototype.addinit = function(fun){
-	this.initCallback = fun;
-}
-
 
 //音量调节
 MusicVisualizer.prototype.changeVolume = function(rate){

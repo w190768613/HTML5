@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+ <html>
   <head>
     <title><%= title %></title>
     <link rel='stylesheet/less'  href='/stylesheets/index.less' />
@@ -23,7 +23,7 @@
     		Local music
     	</button>
       <input class="upload" type="file" id="upload" />
-    	<ul class="music-list" id="music-list">
+    	<ul class="music-list" id="list">
         <% music.forEach(function(name){ %>
         <li title="<%= name %>"><%= name %></li>
         <% }) %>
@@ -36,5 +36,3 @@
   </body>
   <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
 </html>
-	
-	

@@ -2,7 +2,6 @@
 	var $ = function(s){return document.querySelector(s);}
 
 	var box = $("#canvas");
-	var box2 = $("#list");
 	var canvas = document.createElement("canvas");
 	var ctx = canvas.getContext("2d");
 
@@ -35,8 +34,7 @@
 	
 	//初始化heigth，width以及canvas的宽高
 	function init(){
-		HEIGHT = box2.clientHeight,
-		console.log("height: " + box2.clientHeight);
+		HEIGHT = box.clientHeight,
 		WIDTH = box.clientWidth;
 		canvas.height = HEIGHT;
 		canvas.width = WIDTH;
@@ -215,13 +213,16 @@
 	}()
 	
 	canvas.onclick = function(){
+		console.log("onclick");
 		if(Render.type == 'Dot'){
+			console.log("dotdot");
 			for(var i = 0;i < SIZE; i++){
 				ARR.dotMode == "random" ? ARR[i].dx = 0 : ARR[i].dx = ARR[i].dx2;
 			}
 			ARR.dotMode = ARR.dotMode == "static" ? "random" : "static";
 		}
 	}
+	
 	$("#volume").oninput = function(){
 		visualizer.changeVolume(this.value/this.max);
 	}
