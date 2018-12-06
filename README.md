@@ -3,7 +3,7 @@
 codes about HTML5
 
 # 1.canvas_clock canvas绘制时钟特效
-  无后台，直接打开index.html即可
+  无后台，直接运行index.html即可
 
 ![index](https://github.com/w190768613/HTML5/blob/master/canvas_clock/index.png)
 
@@ -19,9 +19,16 @@ $ supervisor bin/www
 
 # 3.canvas_handwriting 手写板
 
-无后台，点击直接运行
+无后台，直接运行index.html即可
 
 兼容了移动端
 
 
 ![index](https://github.com/w190768613/HTML5/blob/master/canvas_handwriting/index.png)
+
+
+# 4.h5_tinyHeart h5小游戏-爱心鱼
+
+无后台，直接运行index.html即可
+
+![index](https://github.com/w190768613/HTML5/blob/master/h5_tinyHeart/index.png)
